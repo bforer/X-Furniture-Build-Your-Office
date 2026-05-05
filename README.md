@@ -206,3 +206,15 @@ All product data lives in `js/data/items.js`. Each entry:
 To add a product: add an entry to the array and drop the JPEG into `assets/images/`.  
 To remove a product: delete its entry — the catalogue rebuilds from the array automatically.  
 To update a price: edit `price` and/or `rent` directly.
+
+---
+
+## Extraction script
+
+`scripts/extract-assets.js` is a **one-time development tool** used to split the original `office-planner.html` monolith into this multi-file structure. You do not need to run it again unless you are re-extracting from a new version of the monolith.
+
+```bash
+node scripts/extract-assets.js
+```
+
+It requires Node.js and reads `office-planner.html` from the project root. It will overwrite all generated files in `css/`, `js/`, `assets/images/`, `vendor/`, and `index.html`.
