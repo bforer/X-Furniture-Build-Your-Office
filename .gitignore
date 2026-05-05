@@ -1,6 +1,7 @@
 # Environment variables — never commit
 .env
 .env.*
+.env-server
 
 # SSH keys — never commit
 id_rsa
@@ -14,3 +15,12 @@ Thumbs.db
 # Editor
 .vscode/
 *.swp
+
+# Dev-only — not needed on server
+README.md
+web-team-brief.docx
+cover-email.txt
+office-planner.html
+docs/
+daily/
+scripts/
