@@ -38,7 +38,7 @@
 //      issuedAt:  "2026-04-27T..."
 //    }
 // ============================================================
-const WEBHOOK_URL = 'REPLACE_ME_WITH_YOUR_WEBHOOK_URL';
+const WEBHOOK_URL = 'https://brendan.bls.co.za/webhook-test/xfurniture-app';
 const SALES_EMAIL = 'cecile@xfurniture.co.za';
 
 async function submitQuote(client) {
@@ -46,10 +46,12 @@ async function submitQuote(client) {
 
   // 1) ALWAYS generate the PDF locally and download it to the client.
   //    This works whether or not a webhook is configured.
+  let pdfBase64 = null;
   try {
     const pdfBlob = generateQuotePDF(payload);
     lastPdfBlob = pdfBlob;
     triggerPdfDownload(pdfBlob, payload.reference);
+    pdfBase64 = await blobToBase64(pdfBlob);
   } catch (err) {
     console.error('PDF generation failed:', err);
     setStatus('warn',
@@ -60,8 +62,6 @@ async function submitQuote(client) {
 
   // 2) Send the lead to the configured webhook (if any).
   if (!WEBHOOK_URL || WEBHOOK_URL === 'REPLACE_ME_WITH_YOUR_WEBHOOK_URL') {
-    // No webhook configured yet — only the local download happened.
-    // Still show the user a positive message, since their PDF downloaded fine.
     setStatus('success',
       'Your quote is ready',
       `Your PDF quote (reference <strong>${escapeHtml(payload.reference)}</strong>) has downloaded to this device. Please email it to <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call +27 64 521 0662 — a consultant will be in touch within one business day.`);
@@ -72,7 +72,7 @@ async function submitQuote(client) {
     const res = await fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({ ...payload, pdfBase64 })
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     setStatus('success',
@@ -117,6 +117,15 @@ function setStatus(kind, title, message) {
   if (kind === 'success') icon.textContent = '✓';
   else if (kind === 'warn')   icon.textContent = '!';
   else                        icon.textContent = '';
+}
+
+function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
 }
 
 function computeTotals() {
