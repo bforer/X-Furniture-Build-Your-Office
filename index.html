@@ -230,6 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								id="company"
 								name="company"
 								autocomplete="organization"
+								maxlength="200"
 							/>
 							<span class="err-msg" data-for="company"></span>
 						</div>
@@ -240,6 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								id="contact"
 								name="contact"
 								autocomplete="name"
+								maxlength="100"
 							/>
 							<span class="err-msg" data-for="contact"></span>
 						</div>
@@ -251,6 +253,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								name="phone"
 								autocomplete="tel"
 								placeholder="+27 …"
+								maxlength="30"
 							/>
 							<span class="err-msg" data-for="phone"></span>
 						</div>
@@ -261,6 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								id="email"
 								name="email"
 								autocomplete="email"
+								maxlength="254"
 							/>
 							<span class="err-msg" data-for="email"></span>
 						</div>
@@ -272,10 +276,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								name="location"
 								placeholder="City, suburb or full address"
 								autocomplete="address-level2"
+								maxlength="300"
 							/>
 							<span class="err-msg" data-for="location"></span>
 						</div>
 					</div>
+					<!-- Honeypot: hidden from real users, filled by bots — submission silently dropped -->
+					<input type="text" name="website" id="hp-website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+
 					<div class="form-cta">
 						<p class="small">
 							By submitting, you agree to be contacted by X-Furniture about this

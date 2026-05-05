@@ -43,7 +43,6 @@ const SALES_EMAIL = 'sales@xfurniture.co.za';
 
 async function submitQuote(client) {
   const payload = buildPayload(client);
-  console.log('[X-Furniture Office Planner] quote payload:', payload);
 
   // 1) ALWAYS generate the PDF locally and download it to the client.
   //    This works whether or not a webhook is configured.

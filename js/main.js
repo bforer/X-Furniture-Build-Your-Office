@@ -134,6 +134,7 @@ fields.forEach(f => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+  if (document.getElementById('hp-website').value) return; // honeypot triggered
   if (!validate()) {
     const firstErr = form.querySelector('.error');
     if (firstErr) firstErr.focus();
