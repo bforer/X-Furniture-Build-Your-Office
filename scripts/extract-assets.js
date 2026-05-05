@@ -6,7 +6,12 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const html = fs.readFileSync(path.join(ROOT, 'office-planner.html'), 'utf8');
+const srcPath = path.join(ROOT, 'office-planner.html');
+if (!fs.existsSync(srcPath)) {
+  console.error('ERROR: office-planner.html not found in', ROOT);
+  process.exit(1);
+}
+const html = fs.readFileSync(srcPath, 'utf8');
 const lines = html.split('\n');
 
 // 1-indexed inclusive slice
@@ -27,7 +32,17 @@ console.log('✓ css/styles.css');
 // ── 3. assets/images/ + js/data/items.js ─────────────────────────────────
 const itemsLine = lines[1467]; // line 1468, 0-indexed
 const json      = itemsLine.trim().replace(/^const ITEMS = /, '').replace(/;$/, '');
-const items     = JSON.parse(json);
+let items;
+try {
+  items = JSON.parse(json);
+} catch (e) {
+  console.error('ERROR: Could not parse ITEMS array from line 1468. Check that line numbers are still correct.');
+  process.exit(1);
+}
+
+if (items.length !== 8) {
+  console.warn(`WARNING: Expected 8 items, found ${items.length}. Proceeding anyway.`);
+}
 
 items.forEach(item => {
   const base64 = item.img.replace(/^data:image\/\w+;base64,/, '');
