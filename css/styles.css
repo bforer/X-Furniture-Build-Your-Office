@@ -18,7 +18,7 @@
     --shadow:    0 1px 0 rgba(255,255,255,0.04), 0 12px 32px rgba(0,0,0,0.45);
     --shadow-lg: 0 1px 0 rgba(255,255,255,0.06), 0 24px 60px rgba(0,0,0,0.55);
 
-    --font: 'Saira', 'D-DIN', 'DIN Next', sans-serif;
+    --font: 'DM Sans', sans-serif;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
