@@ -8,5 +8,5 @@ if (!hash_equals($sig, $_SERVER['HTTP_X_HUB_SIGNATURE_256'] ?? '')) {
     exit('Forbidden');
 }
 
-$output = shell_exec('cd /home/xfurnitureco/public_html && git pull 2>&1');
+$output = shell_exec('cd /home/xfurnitureco/public_html/quotes.xfurniture.co.za/quotes-app && git pull 2>&1');
 echo $output;
