@@ -824,7 +824,7 @@
     .totals-block { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; }
     .quote-banner { grid-template-columns: 1fr; gap: 16px; padding: 32px 28px; }
     .quote-banner .qb-meta { text-align: left; }
-    .section-tag { padding: 48px 0 24px; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+    .section-tag { padding: 48px 0 24px; margin-bottom: 32px; flex-direction: column; align-items: flex-start; gap: 8px; }
     .section-tag .num { font-size: 40px; }
     .section-tag h2 { font-size: 18px; }
   }
