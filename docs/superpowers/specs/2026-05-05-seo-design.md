@@ -59,11 +59,11 @@ Includes: primary action (planner + quote), brand name, geographic modifier.
 <meta name="geo.placename" content="Sandton">
 ```
 
-### 4. Inline SVG favicon
+### 4. Favicon
 ```html
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M 78 8 L 92 8 L 32 92 L 18 92 Z' fill='%23888'/><path d='M 22 8 L 8 8 L 68 92 L 82 92 Z' fill='%23DCDCDC'/></svg>">
+<link rel="icon" type="image/webp" href="assets/favicon.webp">
 ```
-Uses the X mark SVG already present in the page body. No new image file needed.
+File committed at `assets/favicon.webp`. WebP favicons are supported by Chrome, Firefox, and Edge. Safari support is limited on older versions — acceptable for this audience.
 
 ### 5. Open Graph tags
 ```html
