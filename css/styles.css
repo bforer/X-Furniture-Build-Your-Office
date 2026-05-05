@@ -1,20 +1,22 @@
   :root {
     /* --- X-FURNITURE CORPORATE IDENTITY --- */
-    --bg:           #1A1A1A;   /* primary charcoal background */
-    --bg-card:      #222222;   /* slightly lifted surface */
-    --bg-elevated:  #2A2A2A;   /* hover / active surface */
-    --bg-deep:      #0F0F0F;   /* deepest panel */
+    --bg:           #141414;   /* primary background */
+    --bg-card:      #1e1e1e;   /* slightly lifted surface */
+    --bg-elevated:  #252525;   /* hover / active surface */
+    --bg-deep:      #0a0a0a;   /* deepest panel */
     --ink:          #F2F2F2;   /* primary text */
     --ink-soft:     #B8B8B8;   /* secondary text */
     --ink-mute:     #6F6F6F;   /* tertiary / labels */
-    --line:         #353535;   /* dividers */
-    --line-strong:  #4A4A4A;
-    --green:        #C8C8C8;   /* primary CI grey (replaces lime accent) */
-    --green-deep:   #A0A0A0;
-    --teal:         #888888;   /* mid CI grey (replaces teal accent) */
-    --teal-deep:    #555555;
-    --grad: linear-gradient(135deg, #DCDCDC 0%, #888888 100%);
-    --grad-soft: linear-gradient(135deg, rgba(220,220,220,0.10) 0%, rgba(136,136,136,0.10) 100%);
+    --line:         #2a2a2a;   /* dividers */
+    --line-strong:  #3a3a3a;
+    --accent:       #94c356;   /* brand green */
+    --accent-deep:  #7aad3d;   /* brand green — darker */
+    --green:        var(--accent);
+    --green-deep:   var(--accent-deep);
+    --teal:         var(--accent-deep);
+    --teal-deep:    #5c8a29;
+    --grad: linear-gradient(135deg, #94c356 0%, #7aad3d 100%);
+    --grad-soft: linear-gradient(135deg, rgba(148,195,86,0.10) 0%, rgba(122,173,61,0.10) 100%);
     --shadow:    0 1px 0 rgba(255,255,255,0.04), 0 12px 32px rgba(0,0,0,0.45);
     --shadow-lg: 0 1px 0 rgba(255,255,255,0.06), 0 24px 60px rgba(0,0,0,0.55);
 
