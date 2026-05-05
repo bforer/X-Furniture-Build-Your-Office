@@ -1,0 +1,11 @@
+# SSH keys — never commit
+id_rsa
+id_rsa.pub
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
