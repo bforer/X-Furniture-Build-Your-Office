@@ -25,6 +25,8 @@ jobs:
             **/.git*/**
             **/node_modules/**
             office-planner.html
+            web-team-brief.docx
+            cover-email.txt
             scripts/**
             docs/**
             daily/**
