@@ -5,6 +5,7 @@
 # SSH keys — never commit
 id_rsa
 id_rsa.pub
+*.ppk
 
 # OS
 .DS_Store
