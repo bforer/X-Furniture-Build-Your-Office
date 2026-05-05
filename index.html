@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Office Planner — X-Furniture</title>
+
+<!-- Primary SEO -->
+<title>Office Planner &amp; Instant Quote Tool | X-Furniture South Africa</title>
+<meta name="description" content="Design your perfect office with X-Furniture's interactive planner. Choose from 8 configurations and get an instant branded PDF quote — available to buy or rent. Based in Sandton, delivering across South Africa.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://quotes.xfurniture.co.za">
+<meta name="theme-color" content="#1A1A1A">
+<meta name="geo.region" content="ZA-GP">
+<meta name="geo.placename" content="Sandton">
+<link rel="icon" type="image/webp" href="assets/favicon.webp">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quotes.xfurniture.co.za">
+<meta property="og:site_name" content="X-Furniture">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:title" content="Office Planner &amp; Instant Quote | X-Furniture South Africa">
+<meta property="og:description" content="Design your perfect office and get an instant PDF quote. 8 configurations, available to buy or rent. Based in Sandton.">
+<meta property="og:image" content="https://quotes.xfurniture.co.za/assets/images/exec-traditional.jpg">
+<meta property="og:image:alt" content="X-Furniture executive office setup">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Office Planner &amp; Instant Quote | X-Furniture">
+<meta name="twitter:description" content="Design your perfect office and get an instant PDF quote. 8 configurations, buy or rent.">
+<meta name="twitter:image" content="https://quotes.xfurniture.co.za/assets/images/exec-traditional.jpg">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!--
@@ -11,8 +38,54 @@
   If you have D-DIN licensed/hosted, swap the @font-face below.
 -->
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="vendor/jspdf.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
+
+<!-- Vendor + Styles -->
+<script src="vendor/jspdf.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FurnitureStore",
+      "@id": "https://www.xfurniture.co.za/#business",
+      "name": "X-Furniture",
+      "url": "https://www.xfurniture.co.za",
+      "telephone": "+27108247622",
+      "email": "hello@xfurniture.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "19 Dartfield Rd, Sandown",
+        "addressLocality": "Sandton",
+        "addressRegion": "Gauteng",
+        "postalCode": "2031",
+        "addressCountry": "ZA"
+      },
+      "sameAs": [
+        "https://www.facebook.com/xfurnitureza/",
+        "https://www.instagram.com/x_furnitureza/"
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://quotes.xfurniture.co.za/#app",
+      "name": "X-Furniture Office Planner",
+      "url": "https://quotes.xfurniture.co.za",
+      "description": "Interactive office planning and instant PDF quote tool. Choose from 8 pre-configured office layouts, set quantities, and receive a branded quote — available for purchase or 36-month rental.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "provider": { "@id": "https://www.xfurniture.co.za/#business" },
+      "offers": {
+        "@type": "Offer",
+        "description": "Office furniture — purchase or 36-month rental",
+        "areaServed": "ZA"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
