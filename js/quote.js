@@ -39,7 +39,7 @@
 //    }
 // ============================================================
 const WEBHOOK_URL = 'REPLACE_ME_WITH_YOUR_WEBHOOK_URL';
-const SALES_EMAIL = 'sales@xfurniture.co.za';
+const SALES_EMAIL = 'cecile@xfurniture.co.za';
 
 async function submitQuote(client) {
   const payload = buildPayload(client);
