@@ -16,6 +16,9 @@ Thumbs.db
 .vscode/
 *.swp
 
+# n8n workflow exports — local tooling only
+n8n-*.json
+
 # Dev-only — not needed on server
 README.md
 web-team-brief.docx

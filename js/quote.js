@@ -48,7 +48,7 @@ async function submitQuote(client) {
   //    This works whether or not a webhook is configured.
   let pdfBase64 = null;
   try {
-    const pdfBlob = generateQuotePDF(payload);
+    const pdfBlob = await generateQuotePDF(payload);
     lastPdfBlob = pdfBlob;
     triggerPdfDownload(pdfBlob, payload.reference);
     pdfBase64 = await blobToBase64(pdfBlob);
