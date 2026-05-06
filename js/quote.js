@@ -38,7 +38,7 @@
 //      issuedAt:  "2026-04-27T..."
 //    }
 // ============================================================
-const WEBHOOK_URL = 'https://brendan.bls.co.za/webhook-test/xfurniture-app';
+const WEBHOOK_URL = 'https://brendan.bls.co.za/webhook/xfurniture-app';
 const SALES_EMAIL = 'cecile@xfurniture.co.za';
 
 async function submitQuote(client) {
