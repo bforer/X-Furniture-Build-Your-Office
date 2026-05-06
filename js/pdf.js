@@ -34,7 +34,7 @@ async function generateQuotePDF(payload) {
   doc.setFontSize(7.5);
   doc.setTextColor('#AAAAAA');
   doc.text('www.xfurniture.co.za', W - M, 26, { align: 'right' });
-  doc.text('+27 64 521 0662', W - M, 37, { align: 'right' });
+  doc.text('010 824 7622', W - M, 37, { align: 'right' });
   // green accent bar at bottom of header
   doc.setFillColor(GREEN);
   doc.rect(0, headerH - 3, W, 3, 'F');
@@ -250,7 +250,7 @@ async function generateQuotePDF(payload) {
   doc.setFontSize(7);
   doc.setTextColor('#666666');
   doc.text('X-FURNITURE · OFFICE PLANNER · ' + payload.reference, M, H - FOOTER_H + 22, { charSpace: 1 });
-  doc.text('www.xfurniture.co.za · +27 64 521 0662', W - M, H - FOOTER_H + 22, { align: 'right', charSpace: 1 });
+  doc.text('www.xfurniture.co.za · 010 824 7622', W - M, H - FOOTER_H + 22, { align: 'right', charSpace: 1 });
 
   return doc.output('blob');
 }

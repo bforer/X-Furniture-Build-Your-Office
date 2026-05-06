@@ -56,7 +56,7 @@ async function submitQuote(client) {
     console.error('PDF generation failed:', err);
     setStatus('warn',
       "We couldn't generate your PDF",
-      `Please contact us directly at <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call +27 64 521 0662 and we'll send you a quote.`);
+      `Please contact us directly at <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call 010 824 7622 and we'll send you a quote.`);
     return;
   }
 
@@ -64,7 +64,7 @@ async function submitQuote(client) {
   if (!WEBHOOK_URL || WEBHOOK_URL === 'REPLACE_ME_WITH_YOUR_WEBHOOK_URL') {
     setStatus('success',
       'Your quote is ready',
-      `Your PDF quote (reference <strong>${escapeHtml(payload.reference)}</strong>) has downloaded to this device. Please email it to <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call +27 64 521 0662 — a consultant will be in touch within one business day.`);
+      `Your PDF quote (reference <strong>${escapeHtml(payload.reference)}</strong>) has downloaded to this device. Please email it to <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call 010 824 7622 — a consultant will be in touch within one business day.`);
     return;
   }
 
@@ -83,7 +83,7 @@ async function submitQuote(client) {
     // PDF downloaded successfully — only the lead notification failed.
     setStatus('warn',
       'Quote downloaded — please email us',
-      `Your PDF quote has downloaded, but we couldn't reach our system to notify the team. Please email it to <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call +27 64 521 0662 and we'll follow up right away.`);
+      `Your PDF quote has downloaded, but we couldn't reach our system to notify the team. Please email it to <a href="mailto:${SALES_EMAIL}" style="color:var(--ink); text-decoration: underline;">${SALES_EMAIL}</a> or call 010 824 7622 and we'll follow up right away.`);
   }
 }
 
